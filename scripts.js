@@ -168,7 +168,13 @@ console.log(pasDeVoyelles(newString));
 // console.log(monTableau.sort()) // [1, 2, 3]
 
 // CODE ICI
+const croissant = (array) => {
+  const sortArray = array.sort((a, b) => a - b);
+  return sortArray;
+};
 
+const moyenTableau = [1, 3, 2];
+console.log(croissant(moyenTableau));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 10
@@ -185,7 +191,17 @@ console.log(pasDeVoyelles(newString));
 // console.log(monTableau) // ["Hello", "elloH", "lloHe", "loHel", "oHell"]
 
 // CODE ICI
+const everyRotationString = (aString, array) => {
+  for (let i = 0; i < aString.length; i++) {
+    const aStringRotate = aString.substring(i) + aString.substring(0, i);
+    array.push(aStringRotate);
+  }
+  return array;
+};
 
+const niceString = "Hello";
+const niceTableau = [];
+console.log(everyRotationString(niceString, niceTableau));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 11
@@ -199,7 +215,15 @@ console.log(pasDeVoyelles(newString));
 // })
 
 // CODE ICI
+const addingOneEveryWhere = (array) => {
+  const arrayMap = array.map((element) => {
+    return element + 1;
+  });
+  return arrayMap;
+};
 
+const sweetTableau = [1, 3, 2];
+console.log(addingOneEveryWhere(sweetTableau));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 12
@@ -213,7 +237,15 @@ console.log(pasDeVoyelles(newString));
 // })
 
 // CODE ICI
+const stringLength = (array) => {
+  const arrayStringLength = array.map((element) => {
+    return element.length;
+  });
+  return arrayStringLength;
+};
 
+const stringArray = ["Hello", "Hello"];
+console.log(stringLength(stringArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 13
@@ -228,7 +260,15 @@ console.log(pasDeVoyelles(newString));
 // })
 
 // CODE ICI
+const firstCharArray = (array) => {
+  const bigyarray = array.map((element) => {
+    return element.charAt(0);
+  });
+  return bigyarray;
+};
 
+const bigoarray = ["Hello", "World"];
+console.log(firstCharArray(bigoarray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 14
@@ -238,7 +278,15 @@ console.log(pasDeVoyelles(newString));
 // Indice regarde l'exercice 13, c'est exactement la même chose sauf qu'il faut récupérer la dernière lettre et non la première.
 
 // CODE ICI
+const lastCharArray = (array) => {
+  const bigyyarray = array.map((element) => {
+    return element.charAt(4);
+  });
+  return bigyyarray;
+};
 
+const bigooarray = ["Hello", "World"];
+console.log(lastCharArray(bigooarray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 15
@@ -249,6 +297,13 @@ console.log(pasDeVoyelles(newString));
 
 // CODE ICI
 
+const onlyBigStrings = (array) => {
+  const bigaaarray = array.filter((element) => element.length >= 5);
+  return bigaaarray;
+};
+
+const myBigArray = ["Hello", "World", "Test", "Salut", "Yo"];
+console.log(onlyBigStrings(myBigArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 16
@@ -262,7 +317,15 @@ console.log(pasDeVoyelles(newString));
 // }, 0)
 
 // CODE ICI
+const sumReduceArray = (array) => {
+  const sum = array.reduce((accumulateur, element) => {
+    return accumulateur + element;
+  });
+  return sum;
+};
 
+const monGrosTableau = [1, 2, 3];
+console.log(sumReduceArray(monGrosTableau));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 17
@@ -276,7 +339,14 @@ console.log(pasDeVoyelles(newString));
 // console.log(monTableauConcat) // ["Hello", "World", "Test", "Salut"]
 
 // CODE ICI
+const mixMyArray = (array1, array2) => {
+  const monTableauConcatt = array1.concat(array2);
+  return monTableauConcatt;
+};
 
+const monGrosArray = ["Hello", "World"];
+const monPetitArray = ["Test", "Salut"];
+console.log(mixMyArray(monGrosArray, monPetitArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 18
@@ -286,7 +356,13 @@ console.log(pasDeVoyelles(newString));
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la présence de la lettre "e". Indice : la méthode includes() permet de savoir si une string contient une lettre ou un mot.
 
 // CODE ICI
+const onlyEString = (array) => {
+  const onlyEArray = array.filter((element) => element.includes("e"));
+  return onlyEArray;
+};
 
+const animalArray = ["Poulet", "Chat", "Chien", "Cheval"];
+console.log(onlyEString(animalArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 19
@@ -296,7 +372,14 @@ console.log(pasDeVoyelles(newString));
 // Indice : il y a plusieurs façon de faire, soit avec un for, soit avec la méthode filter() une fois ça fait utilise la méthode sort() qui permet de trier un tableau.
 
 // CODE ICI
+const ascendingEvenNumbers = (array) => {
+  const onlyEvenNumbers = array.filter((element) => element % 2 == 0);
+  const onlyEvenAndAscending = onlyEvenNumbers.sort((a, b) => a - b);
+  return onlyEvenAndAscending;
+};
 
+const numberArray = [2, 8, 9, 10, 5, 6];
+console.log(ascendingEvenNumbers(numberArray));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 20
@@ -315,7 +398,8 @@ console.log(pasDeVoyelles(newString));
 // console.log(monTableau) // ["Hello", "World"]
 // Indice 2 :  Oublie pas de boucler sur le tableau pour récupérer la longueur de chaque mot. Que soit avec un for ou avec la méthode map().
 // Indice 3 : Pour récupérer le mot le plus court tu dois voir la longueur de chaque mot, quel méthode permet de récupérer la longueur d'une string ?
-// Indice 4 : Pour récupérer le mot le plus court tu dois le trier, quel méthode permet de trier un tableau ? Si tu as utilisé la méthode map() pour récupérer la longueur de chaque mot, tu peux utiliser la méthode sort() directement sur le tableau que tu as récupéré avec la méthode map().
+// Indice 4 : Pour récupérer le mot le plus court tu dois le trier, quel méthode permet de trier un tableau ?
+// Si tu as utilisé la méthode map() pour récupérer la longueur de chaque mot, tu peux utiliser la méthode sort() directement sur le tableau que tu as récupéré avec la méthode map().
 // Indice 5 : Le .sort() trie les nombres en fonction de leur valeur unicode, pour trier des nombres il faut utiliser une fonction de comparaison :
 // const monTableau = [1, 2, 3, 4, 5]
 // const monTableauTri = monTableau.sort((a, b) => {
@@ -324,7 +408,15 @@ console.log(pasDeVoyelles(newString));
 // Indice 6 : Pour récupérer le premier élément d'un tableau tu peux utiliser la notation crochet : monTableau[0]
 
 // CODE ICI
+const shortWordFinder = (array) => {
+  const monNewArray = array.split(" ");
+  const monWordLengthArray = monNewArray.map((element) => element.length);
+  const monWordLenghtButSorted = monWordLengthArray.sort((a, b) => a - b);
+  return monWordLenghtButSorted[0];
+};
 
+const maPtiteString = "The quick brown fox jumps over the lazy dog";
+console.log(shortWordFinder(maPtiteString));
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
