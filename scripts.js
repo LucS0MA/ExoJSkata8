@@ -447,7 +447,21 @@ console.log(shortWordFinder(maPtiteString));
 // Indice : Oubliez pas de transformer les string en tableau pour pouvoir les trier et les comparer. Utilisez la méthode split() pour transformer une string en tableau et la méthode sort() pour trier un tableau. Puis comparez les deux tableaux avec la méthode join() qui permet de transformer un tableau en string.
 
 // CODE ICI
+const anagram = (string1, string2) => {
+  const myFirstArray = string1.split("");
+  const mySecondArray = string2.split("");
+  const sortedArray1 = myFirstArray.sort();
+  const sortedArray2 = mySecondArray.sort();
+  if (sortedArray1.join("") === sortedArray2.join("")) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
+const myFirstString = "listen";
+const mySecondString = "silent";
+console.log(anagram(myFirstString, mySecondString));
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
@@ -480,6 +494,18 @@ console.log(shortWordFinder(maPtiteString));
 // Indice 2 : Pour supprimer un élément d'un tableau vous pouvez utiliser la méthode splice() combiné à une boucle ou la méthode filter() qui permet de filtrer un tableau en fonction d'une condition.
 
 // CODE ICI
+const doubleLettersDelete = (string) => {
+  const myNewArray = string.split("");
+  for (i = 0; i < myNewArray.length; i++) {
+    if (myNewArray[i] === myNewArray[i + 1]) {
+      myNewArray.splice(i, 1);
+    }
+  }
+  return myNewArray.join("");
+};
+
+const myLittleString = "google";
+console.log(doubleLettersDelete(myLittleString));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
