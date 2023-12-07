@@ -544,7 +544,17 @@ console.log(doubleLettersDelete(myLittleString));
 // Indice : Utilisez la méthode slice() pour découper le tableau en plusieurs morceaux. Puis utilisez la méthode join() pour transformer un tableau en string.
 
 // CODE ICI
+const cellPhoneNumber = (array) => {
+  const phoneArray1 = array.slice(0, 3);
+  const phoneArray2 = array.slice(3, 6);
+  const phoneArray3 = array.slice(6, 10);
+  return `(${phoneArray1.join("")}) ${phoneArray2.join("")}-${phoneArray3.join(
+    ""
+  )}`;
+};
 
+const bigNumberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+console.log(cellPhoneNumber(bigNumberArray));
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
