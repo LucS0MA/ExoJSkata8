@@ -584,6 +584,18 @@ console.log(cellPhoneNumber(bigNumberArray));
 
 // CODE ICI
 
+const findMissingLetter = (array) => {
+  uniCodeArray = array.map((element) => {
+    return element.charCodeAt();
+  });
+  for (let i = 1; i < uniCodeArray.length; i++) {
+    if (uniCodeArray[i] - uniCodeArray[i - 1] > 1) {
+      return String.fromCharCode(uniCodeArray[i - 1] + 1);
+    }
+  }
+};
+
+console.log(findMissingLetter(["a", "b", "c", "d", "f"]));
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
 //--------------------------------------SOLUTIONS-----------------------------------------------//
@@ -615,6 +627,15 @@ console.log(cellPhoneNumber(bigNumberArray));
 // Indice 2 : Pour trier un tableau de string par ordre alphabétique en se basant sur l'ordre alphabétique des lettres, vous devez utiliser une fonction de comparaison en paramètre de la méthode sort(). Cette fonction de comparaison prend deux paramètres (a et b) et renvoie un nombre négatif si a est plus petit que b, un nombre positif si a est plus grand que b et 0 si a est égal à b.
 
 // CODE ICI
+
+const alphabeticalSorter = (array) => {
+  const alphaArray = array.sort(function (a, b) {
+    return a.localeCompare(b);
+  });
+  return alphaArray;
+};
+
+console.log(alphabeticalSorter(["Banana", "Orange", "Apple", "Mango"]));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
